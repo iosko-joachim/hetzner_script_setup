@@ -1,0 +1,118 @@
+#cloud-config
+
+users:
+  - name: iosko
+    passwd: "$6$0/WjLiwcwB5Txvsk$3bCzjWRrxJX8.CvRVGHKIGEVUqLK5kbySshwMJFBDBBZB0Ol1pxSVhpMWtU/WjGWV.rYGRGofcJXFlNalgf6h1"
+    lock_passwd: false
+    groups: users, admin
+    sudo: ALL=(ALL) ALL
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPyw+qe4TZm7NQWA5p5ptBabuWb1imcsVLMs95yjHJy1 jr-gmbh@hetzner
+
+packages:
+  - fail2ban
+  - ufw
+  - nginx
+  - git
+  - tmux
+  - htop
+  - curl
+  - wget
+  - zip
+  - unzip
+
+package_update: true
+package_upgrade: true
+
+write_files:
+  - path: /etc/fail2ban/jail.local
+    content: |
+      [DEFAULT]
+      bantime = 3600
+      findtime = 600
+      maxretry = 3
+
+      [sshd]
+      enabled = true
+      port = 2222
+      filter = sshd
+      logpath = /var/log/auth.log
+      maxretry = 3
+      banaction = iptables-multiport
+
+runcmd:
+  # System bereinigen
+  - apt autoremove -y
+
+  # Git global konfigurieren
+  - runuser -l iosko -c 'git config --global user.name "Joachim Richter"'
+  - runuser -l iosko -c 'git config --global user.email "joachim.richter@jr-gmbh.ch"'
+
+  # Tmux-Konfiguration erstellen
+  - |
+    cat > /home/iosko/.tmux.conf << 'EOF'
+    set -g mouse on
+    set -g base-index 1
+    set -g pane-base-index 1
+    set -g history-limit 10000
+    EOF
+  - chown iosko:iosko /home/iosko/.tmux.conf
+
+  # GitHub SSH Forwarding aktivieren
+  - mkdir -p /home/iosko/.ssh
+  - |
+    cat > /home/iosko/.ssh/config << 'EOF'
+    Host github.com
+      ForwardAgent yes
+      StrictHostKeyChecking accept-new
+    EOF
+  - chmod 700 /home/iosko/.ssh
+  - chmod 600 /home/iosko/.ssh/config
+  - chown -R iosko:iosko /home/iosko/.ssh
+
+  # SSH-Konfiguration anpassen
+  - |
+    cat > /etc/ssh/sshd_config.d/99-custom.conf << 'EOF'
+    Port 2222
+    PermitRootLogin no
+    PasswordAuthentication no
+    KbdInteractiveAuthentication no
+    ChallengeResponseAuthentication no
+    MaxAuthTries 3
+    AllowTcpForwarding no
+    X11Forwarding no
+    AllowAgentForwarding yes
+    AuthorizedKeysFile .ssh/authorized_keys
+    AllowUsers iosko
+    ClientAliveInterval 300
+    ClientAliveCountMax 2
+    EOF
+
+  # UFW Firewall konfigurieren
+  - ufw default deny incoming
+  - ufw default allow outgoing
+  - ufw allow 2222/tcp comment 'SSH'
+  - ufw allow 'Nginx Full'
+  - ufw --force enable
+
+  # Fail2Ban starten
+  - systemctl enable fail2ban
+  - systemctl start fail2ban
+
+  # SSH neustarten
+  - systemctl restart ssh
+
+  # Nginx aktivieren
+  - systemctl enable nginx
+  - systemctl start nginx
+
+  # Zeitzone setzen
+  - timedatectl set-timezone Europe/Zurich
+
+  # Finale Meldung
+  - echo "Server setup completed at $(date)" >> /var/log/cloud-init-output.log
+
+  - reboot
+
+final_message: "Server setup completed after $UPTIME seconds"

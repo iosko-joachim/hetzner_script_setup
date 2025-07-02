@@ -1,0 +1,23 @@
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name _;
+
+    # Sofortige Verbindungstrennung für unerwünschte HTTP-Zugriffe
+    return 444;
+}
+
+server {
+    listen 443 ssl default_server;
+    listen [::]:443 ssl default_server;
+    server_name _;
+
+    # Verwende ein gültiges Zertifikat, damit Nginx mit SSL startet
+    ssl_certificate /etc/letsencrypt/live/devsandbox.DOMAIN_PLACEHOLDER/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/devsandbox.DOMAIN_PLACEHOLDER/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+
+    # Sofortige Verbindungstrennung für unerwünschte HTTPS-Zugriffe
+    return 444;
+}

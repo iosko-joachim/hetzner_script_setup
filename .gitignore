@@ -1,0 +1,35 @@
+# OS files
+.DS_Store
+__MACOSX/
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Logs
+*.log
+
+# Sensitive files
+*.key
+*.pem
+.env
+secrets/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak

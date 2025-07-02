@@ -1,0 +1,57 @@
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name DOMAIN_PLACEHOLDER www.DOMAIN_PLACEHOLDER;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+
+    server_name DOMAIN_PLACEHOLDER www.DOMAIN_PLACEHOLDER;
+    root /var/www/grav;
+    index index.php index.html;
+
+    # SSL-Einstellungen (von Certbot)
+    ssl_certificate /etc/letsencrypt/live/DOMAIN_PLACEHOLDER/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/DOMAIN_PLACEHOLDER/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+
+    # Sicherheitsheader
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-XSS-Protection "1; mode=block";
+    add_header X-Content-Type-Options "nosniff";
+
+    # Static files caching
+    location ~* \.(jpg|jpeg|png|gif|ico|css|js|svg)$ {
+        expires 365d;
+        add_header Cache-Control "public, no-transform";
+    }
+
+    # Grav-Routing
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ^~ /admin {
+        try_files $uri $uri/ /index.php?$query_string;
+        allow 93.184.28.133;  # Deine IP
+        deny all;
+    }
+
+    # PHP-Verarbeitung
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    # Block .htaccess/Zugriff auf Systemdateien
+    location ~ /(\.ht|backup|cache|logs|tmp) {
+        deny all;
+    }
+}
