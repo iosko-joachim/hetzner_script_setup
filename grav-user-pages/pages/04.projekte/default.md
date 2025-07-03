@@ -6,81 +6,95 @@ slug: projekte
 
 ## Ausgewählte Projekte
 
-Hier finden Sie eine Auswahl meiner Projekte aus verschiedenen Technologiebereichen. Jedes Projekt zeigt meine Fähigkeit, komplexe technische Herausforderungen zu meistern und innovative Lösungen zu entwickeln.
+Über 20 Jahre Erfahrung in der Softwareentwicklung mit Schwerpunkt auf Embedded Systems, Enterprise-Anwendungen und Mobilfunktechnologie.
 
-### Wireless Power Transfer
-**Witricity Schweiz GmbH (06/2024-10/2024)**
+### Entwicklung & Hardware-Tests für kabelloses EV-Ladegerät
+**Witricity Schweiz GmbH (06/2024 – 10/2024)**
 
-*Entwicklung von Firmware für drahtlose Ladesysteme im Automotive-Bereich*
+*Senior Software Engineer (über Joachim Richter GmbH)*
 
-- **Herausforderung:** Integration komplexer Kommunikationsprotokolle für Wireless-Power-Systeme
-- **Lösung:** Entwicklung robuster CAN-basierter Kommunikation zwischen Ladestation und Fahrzeug
-- **Technologien:** C/C++, STM32, CAN-Bus, J1939-Protokoll, Python (Testautomatisierung)
-- **Ergebnis:** Zuverlässiges System für die drahtlose Energieverübertragung mit 11kW Leistung
+- **Testentwicklung:** Erstellung von Testroutinen für Hardwarekomponenten wie CAN-Bus, PWM, SPI und ADC zur Evaluierung neuer Testplatinen
+- **PoC-Implementierung:** Entwicklung eines Proof of Concept für Datenerfassung mit DMA-Unterstützung
+- **Testautomatisierung:** Integration der Testroutinen in eine Python-Anwendung mit PyQt
+- **Tests und Debugging:** Durchführung von Tests zur Überprüfung der Systemstabilität
+- **Technologien:** C/C++, STM32, CAN-Bus, Python, PyQt, DMA
 
-### Point-of-Sale Terminal Modernisierung
-**Proregia AG, Schweiz (08/2020-02/2024)**
+### Integration von OTA-Updates und sichere Kommunikation
+**Proregia AG (08/2020 – 02/2024)**
 
-*Neuentwicklung eines modularen Kassensystems für den Einzelhandel*
+*Senior Software Engineer für Medizintechnikgeräte*
 
-- **Herausforderung:** Veraltete Codebasis, neue Sicherheitsanforderungen, moderne Zahlungsmethoden
-- **Lösung:** Komplette Neuarchitektur mit modularem Aufbau und OTA-Update-Fähigkeit
-- **Technologien:** Rust, C++, Linux Embedded, BLE, NFC, OTA-Updates
-- **Ergebnis:** Zukunftsfähige Plattform mit reduzierten Wartungskosten und erhöhter Sicherheit
+- **Benutzeroberfläche:** Überarbeitung der UI von Medizintechnikgeräten zur Einhaltung neuer Spezifikationen
+- **OTA-Updates:** Design und Implementierung einer OTA-Update-Funktionalität mit Backend-Integration
+- **Kryptographie:** Integration einer Kryptographie-Bibliothek zur Absicherung der Datenübertragung
+- **Soft-HSM:** Entwicklung eines "Soft-HSM" als Alternative zu Hardware-Sicherheitsmodulen
+- **Apple Watch PoC:** Entwicklung einer Proof-of-Concept App für Apple Watch Konnektivität
+- **BLE-Analyse:** Debugging mit Wireshark und Nordic BLE Sniffer
+- **Technologien:** C/C++, BLE, Kryptographie, OTA, Apple Watch SDK, Wireshark
 
-### Medizinisches Bluetooth-Gerät
-**bbv Software Services AG (10/2016-07/2020)**
+### Enterprise-Lösungen für Sozialversicherung
+**bbv Software Services AG (10/2016 – 07/2020)**
 
-*Entwicklung eines BLE-fähigen medizinischen Messgeräts*
+*Senior Software Engineer bei Löwenfels Partner AG & AD Swiss*
 
-- **Herausforderung:** Strenge regulatorische Anforderungen (IEC 62304), Energieeffizienz
-- **Lösung:** Entwicklung nach Medical Device Standards mit umfassender Dokumentation
-- **Technologien:** C, Nordic nRF52840, FreeRTOS, BLE 5.0, AES-Verschlüsselung
-- **Ergebnis:** CE-zertifiziertes Medizinprodukt mit 2 Jahren Batterielaufzeit
+- **AHV-Plattform-Migration:** Migration von HOST IBM OS/390 & TSO/Cobol zu Java/DB2-Anwendung
+- **Datenmigration:** Implementierung von PKZ (Testcodes) für erfolgreiche Migration in 10+ Kantonen
+- **Spring Boot:** Implementierung der Leistungserbringer Patientenakte (LPR)-Komponente
+- **Qualitätssicherung:** Umfassende Unit-Tests mit JUnit
+- **Technologien:** Java, Spring Boot, DB2, MySQL, JUnit, Enterprise Architecture
 
-### Industrial IoT Gateway
-**Industriekunde (2019-2020)**
+### Layer 3 Decoder Optimierung
+**Swissqual AG (10/2014 – 09/2016)**
 
-*Gateway für die Anbindung von Industriemaschinen an Cloud-Plattformen*
+*Software Engineer für Mobilfunk-Testgeräte*
 
-- **Herausforderung:** Heterogene Maschinenlandschaft, verschiedene Protokolle, Echtzeitanforderungen
-- **Lösung:** Universelles Gateway mit konfigurierbaren Protokoll-Adaptern
-- **Technologien:** C++, Linux, MQTT, Modbus, OPC-UA, Docker
-- **Ergebnis:** Erfolgreiche Anbindung von 50+ Maschinen verschiedener Hersteller
+- **L3-Decoder:** Aktualisierung der Datenbank für neue Layer-3-Nachrichtendefinitionen
+- **Performance:** Leistungssteigerung um Faktor 5 durch Optimierung
+- **Entwicklungsumgebung:** Implementierung in Visual Studio mit verbessertem Debugging
+- **Technologien:** C++, Visual Studio, Mobilfunkprotokolle
 
-### Automotive Bootloader
-**Tier-1 Zulieferer (2018-2019)**
+### Mobilfunktechnologie und Authentifizierungssysteme
+**Intersys (04/2007 – 07/2012)**
 
-*Entwicklung eines sicheren Bootloaders für Automotive ECUs*
+*Software Engineer mit Fokus auf mobile Anwendungen*
 
-- **Herausforderung:** Sichere Updates, Rollback-Mechanismus, minimaler Flash-Footprint
-- **Lösung:** Dual-Bank Bootloader mit kryptografischer Signaturprüfung
-- **Technologien:** C, ARM Cortex-M4, CAN-Bus, UDS-Protokoll, Hardware Security Module
-- **Ergebnis:** AUTOSAR-konformer Bootloader, erfolgreich in Serie
+- **Nokia N80 VTA:** Anpassung der Video Test Application mit von Nokia signierter DLL
+- **Binary Code Tool:** Entwicklung eines Tools zum Zusammenfügen von DLLs
+- **Swisscom Authentifizierung:** Frontend-Implementierung für Authentifizierungssystem
+- **Bluetooth Payment:** Verwaltung der Bluetooth-Datenübertragung für mobiles Bezahlsystem
+- **Technologien:** Java, J2ME, JSP, XML, HTML, CSS, Bluetooth, Widcomm-Stack
 
-### Smart Home Energy Management
-**Start-up (2017-2018)**
+### Frühe Projekte bei Comsquare AG
+**Comsquare AG (05/2002 – 12/2006)**
 
-*Entwicklung eines intelligenten Energiemanagementsystems*
+*Vielfältige Projekte in der Telekommunikation*
 
-- **Herausforderung:** Echtzeit-Energieoptimierung, Integration verschiedener Geräte
-- **Lösung:** KI-basierte Lastverteilung mit prädiktiven Algorithmen
-- **Technologien:** C++, Python, ESP32, MQTT, Machine Learning
-- **Ergebnis:** 30% Energieeinsparung bei Pilotinstallationen
+- **Ericsson MBMS:** End-to-End Testing für Multimedia Broadcast Multicast Service
+- **Ascom DLL:** Identifikation und Manipulation von DLLs auf Nokia Symbian S60
+- **Texas Instruments:** BuSyB Java-Training und Protokoll-Stack-Generierung
+- **Hughes/Thuraya:** Support für Satelliten-Handsets der ersten Generation
 
-### Weitere Expertise
+### Technologie-Übersicht
 
-**Branchenübergreifende Erfahrung:**
-- Medizintechnik (IEC 62304, ISO 13485)
-- Automotive (ISO 26262, AUTOSAR)
-- Industrieautomation (IEC 61508)
-- Finanzdienstleistungen (PCI-DSS)
-- Consumer Electronics
+**Programmiersprachen:**
+- Embedded: C, C++11, Rust
+- Enterprise: Java, Python
+- Web: HTML, CSS, JavaScript, Node.js
 
-**Besondere Stärken:**
-- Migration von Legacy-Code zu modernen Architekturen
-- Performance-Optimierung für ressourcenbeschränkte Systeme
-- Sicherheitskritische Implementierungen
-- Interdisziplinäre Teamführung
+**Embedded Plattformen:**
+- ARM Cortex-M (STM32)
+- FreeRTOS
+- Debugging: JTAG, ST-Link V2
 
-[Kontaktieren Sie mich](../kontakt) für weitere Projektdetails oder Referenzen!
+**Protokolle & Schnittstellen:**
+- I2C, SPI, CAN-Bus, UART
+- BLE, Bluetooth Classic
+- MQTT, gRPC
+
+**Entwicklungstools:**
+- IDEs: Visual Studio, VS Code, IntelliJ IDEA, IAR
+- Version Control: Git, GitLab
+- Build: CMake, Gradle
+- Testing: Google Test, JUnit, CTest
+
+[Kontaktieren Sie mich](../kontakt) für detaillierte Projektinformationen!
