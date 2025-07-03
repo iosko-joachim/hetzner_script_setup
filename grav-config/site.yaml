@@ -1,0 +1,20 @@
+title: 'Joachim Richter GmbH'
+default_lang: de
+author:
+  name: 'Joachim Richter'
+  email: 'info@jr-gmbh.ch'
+taxonomies:
+  - category
+  - tag
+metadata:
+  description: 'Joachim Richter GmbH - IT-Dienstleistungen und Beratung'
+  keywords: 'IT, Beratung, Software, Entwicklung, Schweiz'
+  author: 'Joachim Richter GmbH'
+summary:
+  enabled: true
+  format: short
+  size: 300
+  delimiter: '==='
+redirects:
+blog:
+  route: '/blog'

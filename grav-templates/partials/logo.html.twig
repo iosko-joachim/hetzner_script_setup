@@ -1,0 +1,9 @@
+{% set logo = theme_var(mobile ? 'custom_logo_mobile' : 'custom_logo') %}
+<a href="{{ home_url }}" class="navbar-brand mr-10">
+{% if logo %}
+  {% set logo_file = (logo|first).name %}
+  <img src="{{ url('theme://images/logo/' ~ logo_file)  }}" alt="{{ site.title }}" />
+{% else %}
+  <span style="font-size: 1.2rem; font-weight: 700; color: #50596c; font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;">Digital Services</span>
+{% endif %}
+</a>

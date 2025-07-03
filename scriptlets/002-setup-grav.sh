@@ -103,6 +103,23 @@ else
     print_warning "Keine custom Pages gefunden in $PAGES_DIR"
 fi
 
+# Config-Dateien kopieren
+CONFIG_DIR="${SCRIPT_DIR}/../grav-config"
+if [ -d "$CONFIG_DIR" ]; then
+    print_info "Kopiere Konfigurationsdateien..."
+    
+    # site.yaml
+    if [ -f "$CONFIG_DIR/site.yaml" ]; then
+        cp "$CONFIG_DIR/site.yaml" /var/www/grav/user/config/site.yaml
+        chown www-data:www-data /var/www/grav/user/config/site.yaml
+        print_info "Site-Konfiguration installiert"
+    fi
+    
+    # Weitere Config-Dateien können hier hinzugefügt werden
+else
+    print_info "Keine Konfigurationsdateien gefunden, überspringe..."
+fi
+
 # Assets kopieren (Favicon etc.)
 ASSETS_DIR="${SCRIPT_DIR}/../grav-assets"
 if [ -d "$ASSETS_DIR" ]; then
@@ -140,6 +157,30 @@ if [ -d "$ASSETS_DIR" ]; then
     # Weitere Assets können hier hinzugefügt werden
 else
     print_info "Keine Assets gefunden, überspringe..."
+fi
+
+# Templates kopieren (überschreibt Theme-Templates)
+TEMPLATES_DIR="${SCRIPT_DIR}/../grav-templates"
+if [ -d "$TEMPLATES_DIR" ]; then
+    print_info "Kopiere Custom Templates..."
+    
+    # Prüfe aktives Theme für Template-Pfad
+    if [ -f "/var/www/grav/user/config/system.yaml" ]; then
+        ACTIVE_THEME=$(grep -E "^\s*theme:" /var/www/grav/user/config/system.yaml | awk '{print $2}' | tr -d ' ')
+        if [ -n "$ACTIVE_THEME" ]; then
+            THEME_TEMPLATES="/var/www/grav/user/themes/$ACTIVE_THEME/templates"
+            if [ -d "$THEME_TEMPLATES" ]; then
+                # Kopiere alle Templates und behalte Verzeichnisstruktur
+                cp -r "$TEMPLATES_DIR"/* "$THEME_TEMPLATES/"
+                chown -R www-data:www-data "$THEME_TEMPLATES"
+                print_info "Custom Templates installiert für Theme: $ACTIVE_THEME"
+            else
+                print_warning "Theme-Template-Verzeichnis nicht gefunden: $THEME_TEMPLATES"
+            fi
+        fi
+    fi
+else
+    print_info "Keine Custom Templates gefunden, überspringe..."
 fi
 
 # Berechtigungen setzen
