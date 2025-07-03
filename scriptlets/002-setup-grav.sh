@@ -103,6 +103,45 @@ else
     print_warning "Keine custom Pages gefunden in $PAGES_DIR"
 fi
 
+# Assets kopieren (Favicon etc.)
+ASSETS_DIR="${SCRIPT_DIR}/../grav-assets"
+if [ -d "$ASSETS_DIR" ]; then
+    print_info "Kopiere Assets..."
+    
+    # Favicon ICO (für Root)
+    if [ -f "$ASSETS_DIR/favicon.ico" ]; then
+        cp "$ASSETS_DIR/favicon.ico" /var/www/grav/favicon.ico
+        chown www-data:www-data /var/www/grav/favicon.ico
+        print_info "Favicon.ico installiert"
+    fi
+    
+    # Favicon PNG (für Theme)
+    if [ -f "$ASSETS_DIR/favicon.png" ]; then
+        # Aktives Theme aus Grav-Config ermitteln
+        if [ -f "/var/www/grav/user/config/system.yaml" ]; then
+            ACTIVE_THEME=$(grep -E "^\s*theme:" /var/www/grav/user/config/system.yaml | awk '{print $2}' | tr -d ' ')
+            if [ -n "$ACTIVE_THEME" ]; then
+                THEME_IMG_DIR="/var/www/grav/user/themes/$ACTIVE_THEME/images"
+                if [ -d "$THEME_IMG_DIR" ]; then
+                    cp "$ASSETS_DIR/favicon.png" "$THEME_IMG_DIR/favicon.png"
+                    chown www-data:www-data "$THEME_IMG_DIR/favicon.png"
+                    print_info "Theme-Favicon installiert für: $ACTIVE_THEME"
+                else
+                    print_warning "Theme-Bilder-Verzeichnis nicht gefunden: $THEME_IMG_DIR"
+                fi
+            else
+                print_warning "Kein aktives Theme in Grav-Config gefunden"
+            fi
+        else
+            print_warning "Grav-Config nicht gefunden, überspringe Theme-Favicon"
+        fi
+    fi
+    
+    # Weitere Assets können hier hinzugefügt werden
+else
+    print_info "Keine Assets gefunden, überspringe..."
+fi
+
 # Berechtigungen setzen
 print_info "Setze Berechtigungen..."
 chown -R www-data:www-data /var/www/grav
