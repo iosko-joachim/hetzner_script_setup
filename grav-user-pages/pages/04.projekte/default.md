@@ -9,7 +9,7 @@ slug: projekte
 Hier finden Sie eine Auswahl meiner Projekte aus verschiedenen Technologiebereichen. Jedes Projekt zeigt meine Fähigkeit, komplexe technische Herausforderungen zu meistern und innovative Lösungen zu entwickeln.
 
 ### Wireless Power Transfer
-**Witricity Corporation, Schweiz (2023-2024)**
+**Witricity Schweiz GmbH (06/2024-10/2024)**
 
 *Entwicklung von Firmware für drahtlose Ladesysteme im Automotive-Bereich*
 
@@ -19,7 +19,7 @@ Hier finden Sie eine Auswahl meiner Projekte aus verschiedenen Technologiebereic
 - **Ergebnis:** Zuverlässiges System für die drahtlose Energieverübertragung mit 11kW Leistung
 
 ### Point-of-Sale Terminal Modernisierung
-**Proregia AG, Schweiz (2022-2023)**
+**Proregia AG, Schweiz (08/2020-02/2024)**
 
 *Neuentwicklung eines modularen Kassensystems für den Einzelhandel*
 
@@ -29,7 +29,7 @@ Hier finden Sie eine Auswahl meiner Projekte aus verschiedenen Technologiebereic
 - **Ergebnis:** Zukunftsfähige Plattform mit reduzierten Wartungskosten und erhöhter Sicherheit
 
 ### Medizinisches Bluetooth-Gerät
-**bbv Software Services AG (2020-2021)**
+**bbv Software Services AG (10/2016-07/2020)**
 
 *Entwicklung eines BLE-fähigen medizinischen Messgeräts*
 

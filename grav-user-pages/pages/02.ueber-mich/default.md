@@ -12,9 +12,9 @@ Mein Name ist Joachim Richter. Als erfahrener Embedded-Entwickler mit über 20 J
 
 Nach meinem Studium der Elektrotechnik an der Hochschule Mannheim (Dipl.-Ing. FH) habe ich mich auf die Entwicklung von Embedded-Systemen spezialisiert. Meine berufliche Laufbahn führte mich durch verschiedene Branchen und Technologiebereiche:
 
-- **2023-2024:** Senior Embedded Developer bei Witricity (Wireless Power Transfer)
-- **2022-2023:** Senior Software Engineer bei Proregia (Point-of-Sale Systeme)
-- **2017-2022:** Senior Software Engineer bei bbv Software Services
+- **06/2024-10/2024:** Senior Embedded Developer bei Witricity Schweiz GmbH (Wireless Power Transfer)
+- **08/2020-02/2024:** Senior Software Engineer bei Proregia AG (Point-of-Sale Systeme)
+- **10/2016-07/2020:** Senior Software Engineer bei bbv Software Services AG
 - **Davor:** Verschiedene Positionen in der Embedded-Entwicklung
 
 ### Technische Expertise
@@ -39,17 +39,17 @@ Nach meinem Studium der Elektrotechnik an der Hochschule Mannheim (Dipl.-Ing. FH
 
 ### Projektbeispiele
 
-**Wireless Power Transfer (Witricity)**
+**Wireless Power Transfer (Witricity Schweiz GmbH)**
 - Entwicklung der Kommunikationssoftware für drahtlose Ladesysteme
 - Implementation von CAN-Protokollen und Diagnose-Features
 - Integration in Automotive-Umgebungen
 
-**Point-of-Sale Terminal (Proregia)**
+**Point-of-Sale Terminal (Proregia AG)**
 - Neuentwicklung eines modularen POS-Systems
 - Integration von Zahlungsterminals und Peripherie
 - Sicherheitskritische Implementierungen
 
-**Medizintechnik (bbv)**
+**Medizintechnik (bbv Software Services AG)**
 - Entwicklung von Firmware für medizinische Geräte
 - IEC 62304 konforme Prozesse
 - Bluetooth-Anbindung und Cloud-Konnektivität
