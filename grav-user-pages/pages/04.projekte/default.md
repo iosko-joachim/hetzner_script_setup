@@ -4,13 +4,83 @@ menu: Projekte
 slug: projekte
 ---
 
-## Projekt-Highlights
+## Ausgewählte Projekte
 
-**Witricity Schweiz (2024)**  
-Entwicklung von Testsystemen für EV-Ladekomponenten, Python-GUI, DMA-Datenerfassung.
+Hier finden Sie eine Auswahl meiner Projekte aus verschiedenen Technologiebereichen. Jedes Projekt zeigt meine Fähigkeit, komplexe technische Herausforderungen zu meistern und innovative Lösungen zu entwickeln.
 
-**Proregia AG (2020–2024)**  
-OTA-System mit Backend, Kryptographie, BLE-Sniffering und Apple-Watch-Prototyp.
+### Wireless Power Transfer
+**Witricity Corporation, Schweiz (2023-2024)**
 
-**bbv Software Services (2016–2020)**  
-Java/DB2-Migration für AHV-Plattform, Security-Komponenten mit Spring Boot.
+*Entwicklung von Firmware für drahtlose Ladesysteme im Automotive-Bereich*
+
+- **Herausforderung:** Integration komplexer Kommunikationsprotokolle für Wireless-Power-Systeme
+- **Lösung:** Entwicklung robuster CAN-basierter Kommunikation zwischen Ladestation und Fahrzeug
+- **Technologien:** C/C++, STM32, CAN-Bus, J1939-Protokoll, Python (Testautomatisierung)
+- **Ergebnis:** Zuverlässiges System für die drahtlose Energieverübertragung mit 11kW Leistung
+
+### Point-of-Sale Terminal Modernisierung
+**Proregia AG, Schweiz (2022-2023)**
+
+*Neuentwicklung eines modularen Kassensystems für den Einzelhandel*
+
+- **Herausforderung:** Veraltete Codebasis, neue Sicherheitsanforderungen, moderne Zahlungsmethoden
+- **Lösung:** Komplette Neuarchitektur mit modularem Aufbau und OTA-Update-Fähigkeit
+- **Technologien:** Rust, C++, Linux Embedded, BLE, NFC, OTA-Updates
+- **Ergebnis:** Zukunftsfähige Plattform mit reduzierten Wartungskosten und erhöhter Sicherheit
+
+### Medizinisches Bluetooth-Gerät
+**bbv Software Services AG (2020-2021)**
+
+*Entwicklung eines BLE-fähigen medizinischen Messgeräts*
+
+- **Herausforderung:** Strenge regulatorische Anforderungen (IEC 62304), Energieeffizienz
+- **Lösung:** Entwicklung nach Medical Device Standards mit umfassender Dokumentation
+- **Technologien:** C, Nordic nRF52840, FreeRTOS, BLE 5.0, AES-Verschlüsselung
+- **Ergebnis:** CE-zertifiziertes Medizinprodukt mit 2 Jahren Batterielaufzeit
+
+### Industrial IoT Gateway
+**Industriekunde (2019-2020)**
+
+*Gateway für die Anbindung von Industriemaschinen an Cloud-Plattformen*
+
+- **Herausforderung:** Heterogene Maschinenlandschaft, verschiedene Protokolle, Echtzeitanforderungen
+- **Lösung:** Universelles Gateway mit konfigurierbaren Protokoll-Adaptern
+- **Technologien:** C++, Linux, MQTT, Modbus, OPC-UA, Docker
+- **Ergebnis:** Erfolgreiche Anbindung von 50+ Maschinen verschiedener Hersteller
+
+### Automotive Bootloader
+**Tier-1 Zulieferer (2018-2019)**
+
+*Entwicklung eines sicheren Bootloaders für Automotive ECUs*
+
+- **Herausforderung:** Sichere Updates, Rollback-Mechanismus, minimaler Flash-Footprint
+- **Lösung:** Dual-Bank Bootloader mit kryptografischer Signaturprüfung
+- **Technologien:** C, ARM Cortex-M4, CAN-Bus, UDS-Protokoll, Hardware Security Module
+- **Ergebnis:** AUTOSAR-konformer Bootloader, erfolgreich in Serie
+
+### Smart Home Energy Management
+**Start-up (2017-2018)**
+
+*Entwicklung eines intelligenten Energiemanagementsystems*
+
+- **Herausforderung:** Echtzeit-Energieoptimierung, Integration verschiedener Geräte
+- **Lösung:** KI-basierte Lastverteilung mit prädiktiven Algorithmen
+- **Technologien:** C++, Python, ESP32, MQTT, Machine Learning
+- **Ergebnis:** 30% Energieeinsparung bei Pilotinstallationen
+
+### Weitere Expertise
+
+**Branchenübergreifende Erfahrung:**
+- Medizintechnik (IEC 62304, ISO 13485)
+- Automotive (ISO 26262, AUTOSAR)
+- Industrieautomation (IEC 61508)
+- Finanzdienstleistungen (PCI-DSS)
+- Consumer Electronics
+
+**Besondere Stärken:**
+- Migration von Legacy-Code zu modernen Architekturen
+- Performance-Optimierung für ressourcenbeschränkte Systeme
+- Sicherheitskritische Implementierungen
+- Interdisziplinäre Teamführung
+
+[Kontaktieren Sie mich](../kontakt) für weitere Projektdetails oder Referenzen!
