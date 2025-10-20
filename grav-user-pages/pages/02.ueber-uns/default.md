@@ -1,7 +1,7 @@
 ---
-title: Über mich
-menu: Über mich
-slug: ueber-mich
+title: Über uns
+menu: Über uns
+slug: ueber-uns
 ---
 
 ## Wer ich bin
@@ -10,10 +10,10 @@ Mein Name ist Joachim Richter. Als erfahrener Embedded-Entwickler mit über 20 J
 
 ### Mein Werdegang
 
-Nach meinem Studium der Elektrotechnik an der Hochschule Mannheim (Dipl.-Ing. FH) habe ich mich auf die Entwicklung von Embedded-Systemen spezialisiert. Meine berufliche Laufbahn führte mich durch verschiedene Branchen und Technologiebereiche:
+Nach meinem Informatikstudium an der TU Darmstadt (Diplom-Informatiker) habe ich mich auf die Entwicklung von Embedded-Systemen spezialisiert und umfangreiche Erfahrung in unterschiedlichen Branchen und Technologiebereichen gesammelt.
 
 - **06/2024-10/2024:** Senior Embedded Developer bei Witricity Schweiz GmbH (Wireless Power Transfer)
-- **08/2020-02/2024:** Senior Software Engineer bei Proregia AG (Point-of-Sale Systeme)
+- **08/2020-02/2024:** Senior Software Engineer bei Proregia AG (Medizintechnikgeräte, OTA-Updates)
 - **10/2016-07/2020:** Senior Software Engineer bei bbv Software Services AG
 - **Davor:** Verschiedene Positionen in der Embedded-Entwicklung
 
@@ -23,7 +23,7 @@ Nach meinem Studium der Elektrotechnik an der Hochschule Mannheim (Dipl.-Ing. FH
 - C/C++ (20+ Jahre Erfahrung)
 - Rust (aktuelle Projekte)
 - Python (Tooling, Testautomatisierung)
-- FreeRTOS, Zephyr OS
+- FreeRTOS
 
 **Hardware-Plattformen**
 - ARM Cortex-M Serie (M0 bis M7)
@@ -40,19 +40,19 @@ Nach meinem Studium der Elektrotechnik an der Hochschule Mannheim (Dipl.-Ing. FH
 ### Projektbeispiele
 
 **Wireless Power Transfer (Witricity Schweiz GmbH)**
-- Entwicklung der Kommunikationssoftware für drahtlose Ladesysteme
-- Implementation von CAN-Protokollen und Diagnose-Features
-- Integration in Automotive-Umgebungen
+- Entwicklung von Testroutinen für CAN, SPI, PWM und ADC  
+- Proof-of-Concept zur Datenerfassung mit DMA-Unterstützung  
+- Testautomatisierung mit Python/PyQt
 
-**Point-of-Sale Terminal (Proregia AG)**
-- Neuentwicklung eines modularen POS-Systems
-- Integration von Zahlungsterminals und Peripherie
-- Sicherheitskritische Implementierungen
+**Medizintechnikgerät (Proregia AG)**
+- Design und Implementierung von OTA-Updates
+- Integration einer Kryptographie-Bibliothek
+- Entwicklung eines Soft-HSMs zur Datensicherung
 
-**Medizintechnik (bbv Software Services AG)**
-- Entwicklung von Firmware für medizinische Geräte
-- IEC 62304 konforme Prozesse
-- Bluetooth-Anbindung und Cloud-Konnektivität
+**AHV-Plattform (bbv Software Services AG)**
+- Entwicklung von Spring-Boot-Komponenten für AHV-Plattform
+- Migration von Host-Systemen nach Java/DB2
+- Modultests mit JUnit
 
 ### Arbeitsweise
 
@@ -75,4 +75,4 @@ Als freiberuflicher Entwickler bin ich flexibel für Projekte verfügbar:
 - **Englisch:** Verhandlungssicher
 - **Französisch:** Konversation
 
-[Nehmen Sie Kontakt auf](../kontakt) - ich freue mich auf spannende Projekte!
+[Nehmen Sie Kontakt auf](../kontakt) - ich freue mich auf den Austausch über spannende Projekte!

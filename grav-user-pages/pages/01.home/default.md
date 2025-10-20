@@ -6,11 +6,11 @@ slug: home
 
 ## Joachim Richter GmbH
 
-**Freiberufliche Embedded-Entwicklung in C/C++ und Rust**
+**Embedded-Entwicklung in C/C++ und Rust**
 
-Mit über 20 Jahren Erfahrung in der Embedded-Entwicklung biete ich maßgeschneiderte Lösungen für anspruchsvolle technische Herausforderungen. Von der Konzeption bis zur Serienreife begleite ich Ihre Projekte mit fundiertem Know-how in modernen und bewährten Technologien.
+Mit über 20 Jahren Erfahrung in der Embedded-Entwicklung bietet die Joachim Richter GmbH massgeschneiderte Lösungen für anspruchsvolle technische Herausforderungen. Von der Konzeption bis zur Serienreife begleiten wir Ihre Projekte mit fundiertem Know-how in modernen und bewährten Technologien.
 
-### Meine Expertise
+### Unsere Expertise
 
 - **Embedded Systems:** ARM Cortex-M, STM32, FreeRTOS, Bare-Metal
 - **Programmiersprachen:** C/C++, Rust, Python, Assembler
@@ -26,4 +26,4 @@ Mit über 20 Jahren Erfahrung in der Embedded-Entwicklung biete ich maßgeschnei
 
 **Low-Power Design** - Energieeffiziente Lösungen für batteriebetriebene Anwendungen
 
-[Mehr über meine Dienstleistungen](../dienstleistungen) | [Kontakt aufnehmen](../kontakt)
+[Mehr über unsere Dienstleistungen](../dienstleistungen) | [Kontakt aufnehmen](../kontakt)

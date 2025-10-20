@@ -41,7 +41,7 @@ slug: projekte
 - **Datenmigration:** Implementierung von PKZ (Testcodes) für erfolgreiche Migration in 10+ Kantonen
 - **Spring Boot:** Implementierung der Leistungserbringer Patientenakte (LPR)-Komponente
 - **Qualitätssicherung:** Umfassende Unit-Tests mit JUnit
-- **Technologien:** Java, Spring Boot, DB2, MySQL, JUnit, Enterprise Architecture
+- **Technologien:** Java, Spring Boot, DB2, MySQL, JUnit
 
 ### Layer 3 Decoder Optimierung
 **Swissqual AG (10/2014 – 09/2016)**
@@ -88,8 +88,8 @@ slug: projekte
 
 **Protokolle & Schnittstellen:**
 - I2C, SPI, CAN-Bus, UART
-- BLE, Bluetooth Classic
-- MQTT, gRPC
+- BLE
+- gRPC
 
 **Entwicklungstools:**
 - IDEs: Visual Studio, VS Code, IntelliJ IDEA, IAR
@@ -97,4 +97,4 @@ slug: projekte
 - Build: CMake, Gradle
 - Testing: Google Test, JUnit, CTest
 
-[Kontaktieren Sie mich](../kontakt) für detaillierte Projektinformationen!
+[Kontaktieren Sie uns](../kontakt) für detaillierte Projektinformationen!

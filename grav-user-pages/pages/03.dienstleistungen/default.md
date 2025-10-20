@@ -4,24 +4,23 @@ menu: Dienstleistungen
 slug: dienstleistungen
 ---
 
-## Was ich anbiete
+## Was wir anbieten
 
 ### Embedded-Softwareentwicklung
 
-**Firmware-Entwicklung** von der grünen Wiese bis zur Serienreife. Ich unterstütze Sie bei der Entwicklung robuster und wartbarer Embedded-Software, die höchsten Qualitätsansprüchen genügt.
+**Firmware-Entwicklung** von der grünen Wiese bis zur Serienreife. Wir unterstützen Sie bei der Entwicklung robuster und wartbarer Embedded-Software, die höchsten Qualitätsansprüchen genügt.
 
-- **Mikrocontroller:** ARM Cortex-M (M0/M0+/M3/M4/M7), STM32, Nordic nRF, ESP32
-- **RTOS:** FreeRTOS, Zephyr, Bare-Metal-Programmierung
-- **Programmiersprachen:** C/C++ (C11/C++17), Rust, Python, Assembler
+- **Mikrocontroller:** ARM Cortex-M (M0/M0+/M3/M4/M7), STM32, Nordic nRF
+- **RTOS:** FreeRTOS, Bare-Metal-Programmierung
+- **Programmiersprachen:** C/C++ (C11/C++11), Rust, Python, Assembler
 - **Entwicklungsumgebungen:** IAR, Keil, GCC, Visual Studio Code, CLion
 
 ### Kommunikationsprotokolle & Schnittstellen
 
 Implementierung und Optimierung von Kommunikationsprotokollen für verlässliche Datenübertragung:
 
-- **Drahtlos:** Bluetooth Low Energy (BLE), Wi-Fi, LoRa, Zigbee
-- **Kabelgebunden:** I2C, SPI, UART, CAN, USB, Ethernet
-- **Protokolle:** MQTT, CoAP, Modbus, proprietäre Protokolle
+- **Drahtlos:** Bluetooth Low Energy (BLE)
+- **Kabelgebunden:** I2C, SPI, UART, CAN
 
 ### Spezialisierungen
 
@@ -44,7 +43,7 @@ Implementierung und Optimierung von Kommunikationsprotokollen für verlässliche
 
 ### Projektbegleitung
 
-**Von der Idee zum Produkt** - Ich begleite Sie durch alle Projektphasen:
+**Von der Idee zum Produkt** - Wir begleiten Sie durch alle Projektphasen:
 
 1. **Konzeption & Architektur**
    - Anforderungsanalyse
@@ -79,7 +78,7 @@ Implementierung und Optimierung von Kommunikationsprotokollen für verlässliche
 Langjährige Erfahrung in verschiedenen Industriezweigen:
 
 - **Medizintechnik:** IEC 62304 konforme Entwicklung
-- **Automotive:** AUTOSAR, ISO 26262
+- **Automotive:** ISO 26262
 - **Industrieautomation:** Robuste Systeme für raue Umgebungen
 - **IoT & Smart Home:** Vernetzte Geräte und Cloud-Anbindung
 - **Energietechnik:** Wireless Power, Smart Grid
@@ -87,9 +86,9 @@ Langjährige Erfahrung in verschiedenen Industriezweigen:
 ### Tools & Methoden
 
 - **Versionsverwaltung:** Git, GitLab, GitHub, Bitbucket
-- **Build-Systeme:** CMake, Make, Bazel, Cargo
+- **Build-Systeme:** CMake, Make, Cargo
 - **CI/CD:** Jenkins, GitLab CI, GitHub Actions
-- **Debugging:** JTAG, SWD, Logic Analyzer, Oszilloskop
+- **Debugging:** JTAG, SWD, ST-Link, Logic Analyzer, Oszilloskop
 - **Projektmanagement:** Jira, Confluence, Agile/Scrum
 
-[Kontaktieren Sie mich](../kontakt) für ein unverbindliches Gespräch über Ihr Projekt!
+[Kontaktieren Sie uns](../kontakt) für ein unverbindliches Gespräch über Ihr Projekt!
