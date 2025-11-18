@@ -107,15 +107,36 @@ fi
 CONFIG_DIR="${SCRIPT_DIR}/../grav-config"
 if [ -d "$CONFIG_DIR" ]; then
     print_info "Kopiere Konfigurationsdateien..."
-    
+
     # site.yaml
     if [ -f "$CONFIG_DIR/site.yaml" ]; then
         cp "$CONFIG_DIR/site.yaml" /var/www/grav/user/config/site.yaml
         chown www-data:www-data /var/www/grav/user/config/site.yaml
         print_info "Site-Konfiguration installiert"
     fi
-    
-    # Weitere Config-Dateien können hier hinzugefügt werden
+
+    # system.yaml
+    if [ -f "$CONFIG_DIR/system.yaml" ]; then
+        cp "$CONFIG_DIR/system.yaml" /var/www/grav/user/config/system.yaml
+        chown www-data:www-data /var/www/grav/user/config/system.yaml
+        print_info "System-Konfiguration installiert"
+    fi
+
+    # Plugin-Konfigurationen
+    if [ -d "$CONFIG_DIR/plugins" ]; then
+        mkdir -p /var/www/grav/user/config/plugins
+        cp -r "$CONFIG_DIR/plugins"/* /var/www/grav/user/config/plugins/
+        chown -R www-data:www-data /var/www/grav/user/config/plugins
+        print_info "Plugin-Konfigurationen installiert"
+    fi
+
+    # Theme-Konfigurationen
+    if [ -d "$CONFIG_DIR/themes" ]; then
+        mkdir -p /var/www/grav/user/config/themes
+        cp -r "$CONFIG_DIR/themes"/* /var/www/grav/user/config/themes/
+        chown -R www-data:www-data /var/www/grav/user/config/themes
+        print_info "Theme-Konfigurationen installiert"
+    fi
 else
     print_info "Keine Konfigurationsdateien gefunden, überspringe..."
 fi

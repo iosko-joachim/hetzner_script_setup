@@ -1,4 +1,4 @@
-title: 'Joachim Richter GmbH'
+title: 'Spyregia GmbH'
 default_lang: de
 author:
   name: 'Joachim Richter'
@@ -7,9 +7,10 @@ taxonomies:
   - category
   - tag
 metadata:
-  description: 'Joachim Richter GmbH - IT-Dienstleistungen und Beratung'
+  description: 'Embedded Safety & Cybersecurity Engineering'
   keywords: 'IT, Beratung, Software, Entwicklung, Schweiz'
-  author: 'Joachim Richter GmbH'
+  author: 'Spyregia GmbH'
+domain: 'jr-gmbh.xyz'
 summary:
   enabled: true
   format: short

@@ -1,0 +1,57 @@
+absolute_urls: false
+
+default_lang: de
+
+home:
+  alias: '/home'
+
+pages:
+  theme: quark
+  markdown:
+    extra: false
+  process:
+    markdown: true
+    twig: false
+
+cache:
+  enabled: true
+  check:
+    method: file
+  driver: auto
+  prefix: 'g'
+
+twig:
+  cache: true
+  debug: true
+  auto_reload: true
+  autoescape: true
+
+assets:
+  css_pipeline: false
+  css_minify: true
+  css_rewrite: true
+  js_pipeline: false
+  js_module_pipeline: false
+  js_minify: true
+
+errors:
+  display: true
+  log: true
+
+debugger:
+  enabled: false
+  twig: true
+  shutdown:
+    close_connection: true
+gpm:
+  verify_peer: true
+
+languages:
+  supported:
+    - de
+    - en
+  include_default_lang: true      # URLs ohne /de/ für Standardsprache
+  translations: true              # Textstrings übersetzen
+  session_store_active: false     # Sprache nicht in Session speichern
+  http_accept_language: true      # Browser-Sprache automatisch erkennen
+  override_locale: true
