@@ -103,6 +103,18 @@ else
     print_warning "Keine custom Pages gefunden in $PAGES_DIR"
 fi
 
+# Berechtigungen setzen (vor Plugin-Installation nötig)
+print_info "Setze Berechtigungen für Grav..."
+chown -R www-data:www-data /var/www/grav
+chmod -R 755 /var/www/grav
+chmod -R 775 /var/www/grav/cache
+chmod -R 775 /var/www/grav/logs
+chmod -R 775 /var/www/grav/images
+chmod -R 775 /var/www/grav/assets
+chmod -R 775 /var/www/grav/user/data
+chmod -R 775 /var/www/grav/backup
+chmod -R 775 /var/www/grav/tmp
+
 # Grav Plugins installieren
 print_info "Installiere Grav Plugins..."
 cd /var/www/grav
@@ -231,19 +243,9 @@ else
     print_info "Keine Custom Templates gefunden, überspringe..."
 fi
 
-# Berechtigungen setzen
-print_info "Setze Berechtigungen..."
+# Finale Berechtigungen setzen (nach allen Kopieroperationen)
+print_info "Setze finale Berechtigungen..."
 chown -R www-data:www-data /var/www/grav
-chmod -R 755 /var/www/grav
-
-# Schreibrechte für bestimmte Verzeichnisse
-chmod -R 775 /var/www/grav/cache
-chmod -R 775 /var/www/grav/logs
-chmod -R 775 /var/www/grav/images
-chmod -R 775 /var/www/grav/assets
-chmod -R 775 /var/www/grav/user/data
-chmod -R 775 /var/www/grav/backup
-chmod -R 775 /var/www/grav/tmp
 
 # Aufräumen
 print_info "Räume temporäre Dateien auf..."
