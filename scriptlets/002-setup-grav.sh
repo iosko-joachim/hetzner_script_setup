@@ -91,17 +91,23 @@ mv grav-temp/grav-admin /var/www/grav
 # Custom Pages kopieren
 if [ -d "$PAGES_DIR" ]; then
     print_info "Kopiere custom Pages..."
-    
+
     # Alte Pages löschen
     rm -rf /var/www/grav/user/pages/*
-    
+
     # Neue Pages kopieren
     cp -r "$PAGES_DIR"/* /var/www/grav/user/pages/
-    
+
     print_info "Custom Pages erfolgreich installiert"
 else
     print_warning "Keine custom Pages gefunden in $PAGES_DIR"
 fi
+
+# Grav Plugins installieren
+print_info "Installiere Grav Plugins..."
+cd /var/www/grav
+sudo -u www-data bin/gpm install langswitcher -y
+print_info "Langswitcher Plugin installiert"
 
 # Config-Dateien kopieren
 CONFIG_DIR="${SCRIPT_DIR}/../grav-config"
@@ -130,12 +136,21 @@ if [ -d "$CONFIG_DIR" ]; then
         print_info "Plugin-Konfigurationen installiert"
     fi
 
-    # Theme-Konfigurationen
-    if [ -d "$CONFIG_DIR/themes" ]; then
-        mkdir -p /var/www/grav/user/config/themes
-        cp -r "$CONFIG_DIR/themes"/* /var/www/grav/user/config/themes/
-        chown -R www-data:www-data /var/www/grav/user/config/themes
-        print_info "Theme-Konfigurationen installiert"
+    # Theme-Overrides (direkt ins Theme-Verzeichnis)
+    if [ -d "$CONFIG_DIR/theme-overrides" ]; then
+        for theme_dir in "$CONFIG_DIR/theme-overrides"/*; do
+            if [ -d "$theme_dir" ]; then
+                theme_name=$(basename "$theme_dir")
+                target_dir="/var/www/grav/user/themes/$theme_name"
+                if [ -d "$target_dir" ]; then
+                    cp -r "$theme_dir"/* "$target_dir/"
+                    chown -R www-data:www-data "$target_dir"
+                    print_info "Theme-Override installiert für: $theme_name"
+                else
+                    print_warning "Theme-Verzeichnis nicht gefunden: $target_dir"
+                fi
+            fi
+        done
     fi
 else
     print_info "Keine Konfigurationsdateien gefunden, überspringe..."
