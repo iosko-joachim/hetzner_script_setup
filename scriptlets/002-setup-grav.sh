@@ -141,41 +141,53 @@ else
     print_info "Keine Konfigurationsdateien gefunden, überspringe..."
 fi
 
-# Assets kopieren (Favicon etc.)
+# Assets kopieren (Favicon, Logos etc.)
 ASSETS_DIR="${SCRIPT_DIR}/../grav-assets"
 if [ -d "$ASSETS_DIR" ]; then
     print_info "Kopiere Assets..."
-    
+
     # Favicon ICO (für Root)
     if [ -f "$ASSETS_DIR/favicon.ico" ]; then
         cp "$ASSETS_DIR/favicon.ico" /var/www/grav/favicon.ico
         chown www-data:www-data /var/www/grav/favicon.ico
         print_info "Favicon.ico installiert"
     fi
-    
-    # Favicon PNG (für Theme)
-    if [ -f "$ASSETS_DIR/favicon.png" ]; then
-        # Aktives Theme aus Grav-Config ermitteln
-        if [ -f "/var/www/grav/user/config/system.yaml" ]; then
-            ACTIVE_THEME=$(grep -E "^\s*theme:" /var/www/grav/user/config/system.yaml | awk '{print $2}' | tr -d ' ')
-            if [ -n "$ACTIVE_THEME" ]; then
-                THEME_IMG_DIR="/var/www/grav/user/themes/$ACTIVE_THEME/images"
-                if [ -d "$THEME_IMG_DIR" ]; then
-                    cp "$ASSETS_DIR/favicon.png" "$THEME_IMG_DIR/favicon.png"
-                    chown www-data:www-data "$THEME_IMG_DIR/favicon.png"
-                    print_info "Theme-Favicon installiert für: $ACTIVE_THEME"
-                else
-                    print_warning "Theme-Bilder-Verzeichnis nicht gefunden: $THEME_IMG_DIR"
-                fi
-            else
-                print_warning "Kein aktives Theme in Grav-Config gefunden"
+
+    # Aktives Theme ermitteln für alle Theme-Assets
+    ACTIVE_THEME=""
+    if [ -f "/var/www/grav/user/config/system.yaml" ]; then
+        ACTIVE_THEME=$(grep -E "^\s*theme:" /var/www/grav/user/config/system.yaml | awk '{print $2}' | tr -d ' ')
+    fi
+
+    if [ -n "$ACTIVE_THEME" ]; then
+        THEME_IMG_DIR="/var/www/grav/user/themes/$ACTIVE_THEME/images"
+
+        if [ -d "$THEME_IMG_DIR" ]; then
+            # Favicon PNG (für Theme)
+            if [ -f "$ASSETS_DIR/favicon.png" ]; then
+                cp "$ASSETS_DIR/favicon.png" "$THEME_IMG_DIR/favicon.png"
+                chown www-data:www-data "$THEME_IMG_DIR/favicon.png"
+                print_info "Theme-Favicon installiert für: $ACTIVE_THEME"
+            fi
+
+            # Logo-Bilder kopieren
+            if [ -f "$ASSETS_DIR/spyregia.png" ]; then
+                cp "$ASSETS_DIR/spyregia.png" "$THEME_IMG_DIR/spyregia.png"
+                chown www-data:www-data "$THEME_IMG_DIR/spyregia.png"
+                print_info "Logo spyregia.png installiert"
+            fi
+
+            if [ -f "$ASSETS_DIR/scs_logo.png" ]; then
+                cp "$ASSETS_DIR/scs_logo.png" "$THEME_IMG_DIR/scs_logo.png"
+                chown www-data:www-data "$THEME_IMG_DIR/scs_logo.png"
+                print_info "Logo scs_logo.png installiert"
             fi
         else
-            print_warning "Grav-Config nicht gefunden, überspringe Theme-Favicon"
+            print_warning "Theme-Bilder-Verzeichnis nicht gefunden: $THEME_IMG_DIR"
         fi
+    else
+        print_warning "Kein aktives Theme in Grav-Config gefunden"
     fi
-    
-    # Weitere Assets können hier hinzugefügt werden
 else
     print_info "Keine Assets gefunden, überspringe..."
 fi
